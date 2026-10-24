@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vynx To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="vynx-container">
+      <header class="vynx-header">
+        <h1>My Tasks</h1>
+        <p>A little progress everyday.</p>
+      </header>
+
+      <section class="task-input">
+        <form id="task-form">
+          <input
+            type="text"
+            id="task-input"
+            placeholder="What are we getting done today?"
+          />
+
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section class="task-progress">
+        <div class="progress-info">
+          <h2>Daily Progress</h2>
+          <p id="task-counter">0 of 0 tasks completed</p>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-label="Task completion progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          id="progress-bar"
+        >
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="task-list-section">
+        <div id="empty-state">
+          <div class="empty-icon">✦</div>
+          <h3>All clear!</h3>
+          <p>You're all caught up. Add a task to get started.</p>
+        </div>
+
+        <ul id="task-list"></ul>
+        <ul id="task-list"></ul>
+      </section>
+    </main>
+
+    <script src="vynx.js"></script>
+  </body>
+</html>

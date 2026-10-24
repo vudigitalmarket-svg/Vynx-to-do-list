@@ -1,0 +1,281 @@
+/* Vynx Design Foundation */
+:root {
+    --color-background: #F3F0FA;
+    --color-surface: #FFFFFF;
+    --color-text: #29233D;
+    --color-muted: #817B91;
+    --color-primary: #7965D8;
+    --color-primary-light: #E5DFFA;
+
+    --font-primary: Arial, sans-serif;
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    --radius-md: 12px;
+    --radius-lg: 18px;
+}
+
+/* Basic page styling */
+body {
+    margin: 0;
+    padding: var(--space-xl) var(--space-md);
+    background-color: var(--color-primary-light);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+}
+
+/* Vynx header styling */
+.vynx-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+.vynx-header h1 {
+    color: #352751;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+.vynx-header p {
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Vynx main container */
+.vynx-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 36px;
+    background-color: var(--color-primary-light);
+    border: 1px solid #E8E2F3;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(41, 35, 61, 0.07);
+}
+
+.task-input {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(25, 25, 35, 0.06);
+}
+#task-form {
+    display: flex;
+    gap: var(--space-sm);
+}
+#task-input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #e6e3ef;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+#task-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+#task-form button {
+    padding: 0 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#task-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(25, 25, 35, 0.12);
+}
+
+#task-form button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Task list */
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+}
+
+/* Individual task */
+#task-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1.5px solid #E6E3EF;
+}
+/* Task card interactions */
+#task-list li {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+#task-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(25, 25, 35, 0.05);
+    border-color: var(--color-primary-light);
+}
+
+/* Checkbox */
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+/* Task text */
+#task-list li span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+/* Completed task */
+#task-list li span.completed {
+    text-decoration: line-through;
+    color: var(--color-muted);
+}
+
+/* Delete button */
+.delete-button {
+    border: none;
+    background: transparent;
+    color: var(--color-muted);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+/* Delete hover */
+.delete-button:hover {
+    background-color: #FCE8E8;
+    color: #C03939;
+}
+
+/* Daily progress section */
+.task-progress {
+    margin: 28px 0 20px;
+    padding: 0 4px;
+}
+
+/* Progress heading and counter */
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.progress-info h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#task-counter {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 13px;
+}
+
+/* Progress bar background */
+.progress-track {
+    height: 8px;
+    overflow: hidden;
+    background-color: var(--color-primary-light);
+    border-radius: 999px;
+}
+
+/* Progress bar fill */
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+/* Empty state */
+#empty-state {
+    text-align: center;
+    padding: 36px 20px;
+    margin-top: 16px;
+    background-color: var(--color-surface);
+    border: 1px dashed #DCD5FA;
+    border-radius: var(--radius-lg);
+}
+
+.empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-size: 26px;
+}
+
+#empty-state h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+#empty-state p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+/* New task entrance animation */
+@keyframes taskEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#task-list li {
+    animation: taskEnter 0.3s ease-out;
+}
+
+/* media queries */
+@media (max-width: 600px) {
+    .vynx-container {
+        margin: 20px 12px;
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+}
