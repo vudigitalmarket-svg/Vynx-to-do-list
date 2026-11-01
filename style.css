@@ -1,4 +1,9 @@
-/* Vynx Design Foundation */
+/* Vynx Design Foundation */*
+
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --color-background: #F3F0FA;
     --color-surface: #FFFFFF;
@@ -74,6 +79,7 @@ body {
     border: 1px solid #e6e3ef;
     border-radius: var(--radius-md);
     font-family: var(--font-primary);
+    letter-spacing: 1px;
     font-size: 14px;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -271,11 +277,14 @@ body {
     animation: taskEnter 0.3s ease-out;
 }
 
-/* media queries */
+/* responsive design */
 @media (max-width: 600px) {
     .vynx-container {
         margin: 20px 12px;
         padding: 20px 16px;
         border-radius: 18px;
+    }
+    #task-input {
+        font-size: 13px;
     }
 }
